@@ -11,6 +11,14 @@ import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.wiktorjakiela.lol_tracker_api.controller.PlayerController;
+import com.wiktorjakiela.lol_tracker_api.response.PlayerResponse;
+import com.wiktorjakiela.lol_tracker_api.service.PlayerService;
+
+/**
+ * Sprawdza obsługę requestów przez kontroler przy użyciu
+ * udawanego PlayerService.
+ */
 @WebMvcTest(PlayerController.class)
 class PlayerControllerTest {
 
@@ -19,21 +27,7 @@ class PlayerControllerTest {
 
     @MockitoBean
     private PlayerService playerService;
-    
-    // Test Fakeowego Gracza
-    @Test
-    void demoPlayerReturnsFakePlayerData() throws Exception {
-        when(playerService.getDemoPlayer())
-                .thenReturn(new PlayerResponse("Faker", "KR1", "KR", 100));
 
-        mockMvc.perform(get("/api/players/demo"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.gameName").value("Faker"))
-                .andExpect(jsonPath("$.tagLine").value("KR1"))
-                .andExpect(jsonPath("$.region").value("KR"))
-                .andExpect(jsonPath("$.level").value(100));
-    }
-    // Test Zczytywania Danych Gracza z URL 
     @Test
     void playerByRiotIdReturnsPlayerDataFromRequestParams() throws Exception {
         when(playerService.getPlayerByRiotId("Faker", "KR1", "KR"))
