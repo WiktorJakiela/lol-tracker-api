@@ -67,6 +67,16 @@ design choices afterward.
 
 Do not replace learning opportunities with large unexplained code generation.
 
+## First frontend milestone checkpoint
+
+After the first small frontend displays real player data and match history,
+and before its commit, review the backend and desktop frontend code written so far
+with the developer. Add or improve concise educational comments explaining
+class/component responsibilities, data flow, non-obvious mappings, and error
+handling. Keep existing useful comments and avoid narrating every line or
+commenting generated files and dependencies. This checkpoint was completed for
+the first prototype; keep these comments current as the implementation evolves.
+
 ## Git
 
 Keep changes focused on the current task.

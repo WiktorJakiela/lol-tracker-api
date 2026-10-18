@@ -5,9 +5,9 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Udostępnia endpoint sprawdzający, czy backend działa.
- */
+
+// endpoint sprawdzający, czy backend działa.
+
 @RestController
 public class HealthController {
 

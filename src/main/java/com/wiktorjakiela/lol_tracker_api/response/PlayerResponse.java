@@ -1,12 +1,17 @@
 package com.wiktorjakiela.lol_tracker_api.response;
 
+import java.util.List;
+
 /**
- * Określa dane gracza zwracane przez backend w formacie JSON.
+ * Profil zwracany przez nasze API, łączący dane konta, profil LoL i podsumowania rankingowe.
  */
 public record PlayerResponse(
+    String puuid,
     String gameName,
     String tagLine,
     String region,
-    long  level
+    long  level,
+    int profileIconId,
+    List<RankedEntryResponse> rankedEntries
 ) {
 }

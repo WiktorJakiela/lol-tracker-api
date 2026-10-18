@@ -1,7 +1,7 @@
 package com.wiktorjakiela.lol_tracker_api.response;
 
 /**
- * Odwzorowuje JSON otrzymany z endpointu Summoner-V4.
+ * Dane profilu LoL z Riot Summoner-V4, pobierane po PUUID na konkretnym serwerze gry.
  */
 public record SummonerV4Response (
     String puuid,
@@ -9,6 +9,6 @@ public record SummonerV4Response (
     long revisionDate,
     long summonerLevel
 ) {
-    
+
 }
-    
+
